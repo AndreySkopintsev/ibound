@@ -50,7 +50,7 @@ func (c *CacheManager) Save(id string) {
 	c.cache[id] = newCacheModel
 
 	go func(c *CacheModel) {
-		time.Sleep(10 * time.Second)
+		time.Sleep(3 * time.Minute)
 		c.setStatus(TaskDone)
 	}(newCacheModel)
 }
